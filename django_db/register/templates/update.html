@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'reg.css' %}" />
+
+<body>
+    <h1>Update Feedback</h1>
+
+    <form action="update/{{ hotel.id }}" method="post">
+        {% csrf_token %} Rating:<br />
+        <input name="name" value="{{hotel.name}}" />
+        Rating:
+        <input type="number" name="rating" value="{{hotel.rating}}" />
+        <input type="submit" value="Submit" />
+    </form>
+
+
+</body>
+
+</html>
+
+<!-- <div id="entree">
+                <h3> ENTRÉE</h3><br>
+                <div id="entree-items">
+                    <h4> Burrata </h4>
+                    <p>Heirloom tomatoes, Balsamic, Basil.</p>
+
+                    <h4>Hiramasa Kingfish</h4>
+                    <p>Ricotta, Green Tomato, Almonds, Olives.</p>
+
+                    <h4>Squid Ink Linguine</h4>
+                    <p>Crab, Roasted Cherry Tomato, Pistachio.</p>
+
+                    <h4>Grilled King Prawns</h4>
+                    <p>Miso & Orange Butter, Baby Turnips, Wasabi Mayo, Smoked Salmon Roe.</p>
+
+                    <h4>Saffron and Mushroom Risotto</h4>
+                    <p>Carnaroli Rice, Parmesan, Bone Marrow.</p>
+
+                    <h4>Agnolotti</h4>
+                    <p>Smoked Potato & Pecorino, Goat Cheese, Dill Oil.</p>
+                </div>
+
+            </div>
+
+            <div id="mains">
+                <h3>MAIN</h3><br>
+                <h4>Ocean Trout Fillet<br>
+                    confit cherry tomato, cocktail onions, sauce vierge, chives oil<br>
+
+                    Wild Caught Fish Fillet<br>
+                    lettuce emulsion, green apple, black garlic, kale<br>
+
+                    Cotoletta Alla Milanese<br>
+                    marinated mushroom, spinach, parmesan cream<br>
+
+                    Wagyu Beef<br>
+                    cauliflower, hazelnut, sichuan pepper<br>
+
+                    Roasted Lamb<br>
+                    pickled radicchio, asparagus, tarragon mayo, yuzu<br>
+
+                    Wholemeal Casarecce Pasta<br>
+                    zucchini, king prawn, gremolatta<br>
+
+                    Whole Eastern Rock Lobster for Two<br>
+                    thermidor sauce, orange mayo, lobster vinaigrette</h4><br>
+            </div>
+
+            <div id="sides">
+                <h3>SIDES</h3><br>
+                <h4>$12<br>
+                    garden leaves, radish, honey dressing<br>
+                    green peas, pancetta, mint<br>
+                    hand cut fried potatoes, rosemary<br>
+                    grilled broccolini, garlic & chili oil, prosciutto crumbs, sesame seeds</h4><br>
+            </div>
+
+            <div id="desserts">
+                <h3>DESSERT</h3><br>
+                <h4>
+                    Raspberry Semifreddo<br>
+                    coconut crumble, raspberry caviar, lime, hibiscus<br>
+
+                    Coffee Cream<br>
+                    mascarpone, savoiardi biscuit, wattleseed, coffee ice-cream<br>
+
+                    Caramel Delice<br>
+                    passionfruit parfait, caramel, feuilletine tuile<br>
+
+                    Pineapple and Vanilla<br>
+                    lemon curd, almond crumble, peach sorbet<br>
+
+                    Farmhouse Cheeses<br>
+                    (additional charge $12)<br>
+                    selection of condiments</h4><br>
+            </div> -->

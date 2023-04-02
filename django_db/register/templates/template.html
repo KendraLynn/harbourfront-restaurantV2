@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'reg.css' %}">
+
+<body>
+    <div class="hero-image">
+        <div class="hero-text">
+
+            <h1>The Harbourfront</h1>
+            <b>
+                <p>132 Harbourfront St. &nbsp; OurCity &nbsp; 555-555-1234</p>
+            </b>
+        </div>
+    </div>
+    <div>
+        <h3 id="header">Three course À la carte menu $140</h3>
+    </div>
+    <div class="menus">
+        <div class="dropdown">
+            <label for="menu-entrees">
+                <div class="menu-button">Entrees</div>
+            </label> <input type="checkbox" class="hidden-checkbox" id="menu-entrees">
+            <div class="dropdown-content">
+                <ol>
+                    <li class="menu-item">
+                        <h4>Burrata</h4>
+                        <p>Heirloom tomatoes, Balsamic, Basil.</p>
+                        <img class="menu-pic" src="{% static '/burrata.png' %}" />
+                    </li>
+
+                    <li class="menu-item">
+                        <h4>Hiramasa Kingfish</h4>
+                        <p>Ricotta, Green Tomato, Almonds, Olives.</p>
+                        <img class="menu-pic" src="{% static '/hiramasa.jpg' %}" />
+                    </li>
+
+                    <li class="menu-item">
+                        <h4>Squid Ink Linguine</h4>
+                        <p>Crab, Roasted Cherry Tomato, Pistachio.</p>
+                        <img class="menu-pic" src="{% static '/squidink.png' %}" />
+                    </li>
+
+                    <li class="menu-item">
+                        <h4>Grilled King Prawns</h4>
+                        <p>Miso & Orange Butter, Baby Turnips, Wasabi Mayo, Smoked Salmon Roe.</p>
+                        <img class="menu-pic" src="{% static '/kingprawns.jpg' %}" />
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="dropdown">
+            <label for="menu-mains">
+                <div class="menu-button">Mains</div>
+            </label>
+            <input type="checkbox" class="hidden-checkbox" id="menu-mains">
+            <div class="dropdown-content">
+                <ol>
+                    <li class="menu-item">
+                        <h4>Ocean Tour Fillet</h4>
+                        <p>Confit Cherry Tomato, Cocktail Onions, Sauce Vierge, Chives, Olive Oil.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <h4>Wild Caught Fish Fillet</h4>
+                        <p>Lettuce Emulsion, Green Apple, Black Garlic, Kale.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <h4>Cotoletta Alla Milanese</h4>
+                        <p>Marinated Mushroom, Spinach, Parmesan Cream.</p>
+                    </li>
+
+                    <li class="menu-item">
+                        <h4>Wagyu Beef</h4>
+                        <p>Cauliflower, Hazelnut, Szechuan Pepper</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="dropdown">
+            <label for="menu-sides">
+                <div class="menu-button">Sides</div>
+            </label>
+            <input type="checkbox" class="hidden-checkbox" id="menu-sides">
+            <div class="dropdown-content">
+                <ol>
+                    <li class="menu-item">
+                        <h4>Garden Salad</h4>
+                        <p>Lettuce, Tomatoes, Cucumber, Radish.</p>
+                    </li>
+                    <li class="menu-item">
+                        <h4>French Fries</h4>
+                        <p>Potato or Sweet Potato.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="dropdown"> <label for="menu-desserts">
+                <div class="menu-button">Desserts</div>
+            </label>
+            <input type="checkbox" class="hidden-checkbox" id="menu-desserts">
+            <div class="dropdown-content">
+                <ol>
+                    <li class="menu-item">
+                        <h4>Creme Brulee</h4>
+                        <p>Maple Syrup, Brown Sugar, Sage.</p>
+                    </li>
+                    <li class="menu-item">
+                        <h4>Ice Cream</h4>
+                        <p>Vanilla, Chocolate, Maple, from Coaticook Ice Cream.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="ratings">
+        <div class="dropdown"> <label for="leave_ratings">
+                <div class="ratings-button">
+                    <em>
+                        <h3>Enjoyed your visit? Let us know.</h3>
+                    </em>
+                </div>
+            </label>
+            <input type="checkbox" class="hidden-checkbox" id="leave_ratings">
+            <div class="dropdown-content">
+                <form action="" method="post">
+                    {# prevents cross site request forgeries #}
+                    {% csrf_token %} Server: <input type="text" name="name" /> Rating: <input type="number"
+                        name="rating" />
+                    <input type="submit" value="Submit" /> <br><br>
+                </form>
+                <table border="1">
+                    <th>ID</th>
+                    <th>Server</th>
+                    <th>Rating</th>
+                    {% for hotel in hotel_ratings%} <tr>
+                        <td>{{hotel.id}}</td>
+                        <td>{{hotel.name}}</td>
+                        <td>{{hotel.rating}}</td>
+                        <td><a href="update_view/{{hotel.id}}">update</a></td>
+                        <td><a href="delete/{{hotel.id}}">delete</a></td>
+                    </tr> {% endfor %}
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>
+<!-- <h4>Squid Ink Linguine</h4> <p>Crab, Roasted Cherry Tomato, Pistachio.</p> <h4>Grilled King Prawns</h4> <p>Miso & Orange Butter, Baby Turnips, Wasabi Mayo, Smoked Salmon Roe.</p> <h4>Saffron and Mushroom Risotto</h4> <p>Carnaroli Rice, Parmesan, Bone Marrow.</p> <h4>Agnolotti</h4> <p>Smoked Potato & Pecorino, Goat Cheese, Dill Oil.</p> -->

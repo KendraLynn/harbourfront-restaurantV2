@@ -1,0 +1,157 @@
+body {
+    background-color: rgba(127, 255, 212, 0.305);
+    margin: 0;
+}
+
+#header {
+    font-size: 36pt;
+    text-align: center;
+}
+
+
+.hero-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 70px;
+    color: rgb(4, 53, 87);
+    text-align: left;
+    position: absolute;
+}
+
+.hero-text p {
+    font-size: 30px;
+    color: rgb(58, 115, 158);
+    text-align: center;
+
+}
+
+/* dropdown stuff */
+ol {
+    list-style: none;
+}
+
+.menu-pic {
+    height: 250px;
+    width: 250px;
+}
+
+.menus {
+    position: relative;
+    width: 75%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu-button {
+    width: 800px;
+    font-style: italic;
+    font-size: 24pt;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    width: 800px;
+    margin-bottom: 50px;
+}
+
+.menu-button:hover {
+    text-decoration: underline;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.hidden-checkbox:checked~.dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    list-style: none;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
+.hero-image {
+    background-image: url("harbourfront.jpg");
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: 0;
+}
+
+
+
+.ratings {
+    margin-left: 300px;
+}
+
+.ratings-button {
+    width: 100%;
+    margin-left: 125px;
+    font-size: 30px;
+}
+
+form {
+    margin-top: 10px;
+    text-align: center;
+}
+
+table {
+    margin-left: 30px;
+}
+
+th {
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+td {
+
+    height: 30px;
+}
+
+input[type=text] {
+    background-color: rgb(173, 223, 243);
+}
+
+input[type=number] {
+    background-color: rgb(173, 223, 243);
+}
+
+input[type=submit] {
+    height: 20px;
+    width: 100px;
+}
+
+option,
+select {
+    background-color: lightgreen;
+    font-size: medium;
+}
+
+.register {
+    margin-left: 350px;
+
+}

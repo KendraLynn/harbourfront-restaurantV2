@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'reg.css' %}">
+
+<body>
+  <h1>Register Form</h1>
+
+  <form action="" method="post">
+    {% csrf_token %} First Name:
+    <input type="text" name="firstname" />
+    Last Name:
+    <input type="text" name="lastname" />
+    UserId
+    <input type="text" name="uid" />
+    <input type="submit" value="Submit" />
+    <br><br>
+  </form>
+  <div class="register">
+    <table border="1">
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>User ID</th>
+      {% for reg in registry %}
+      <tr>
+        <td>{{reg.firstname}}</td>
+        <td>{{reg.lastname}}</td>
+        <td>{{reg.uid}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+
+</html>
